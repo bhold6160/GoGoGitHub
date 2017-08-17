@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +19,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func requestTokenPressed(_ sender: Any) {
+        let parameters = ["scope" : "email,user,repo"]
+        
+        GitHub.shared.requestAuthWith(parameters: parameters)
+    }
 }
 

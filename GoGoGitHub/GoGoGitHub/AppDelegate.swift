@@ -41,6 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url)
+        return true
+    }
+    
+    func getTempCodeFrom(url: URL) -> String { //result should be ONLY the temp code
+        //url.absoluteString or split into an array at the "=" and give back the code
+    }
 }
 
